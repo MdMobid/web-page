@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch JSON Data</title>
+    <title>World Time API Data</title>
 </head>
 <body>
-    <h1>JSON Data</h1>
-    <pre id="json-data"></pre>
+    <h1>World Time API Data for Asia/Kolkata</h1>
+    <pre id="api-data"></pre>
 
     <script>
-        // URL of the JSON data
-        const url = 'http://worldtimeapi.org/api/timezone/Asia/Kolkata';
+        // URL of the API
+        const apiUrl = 'http://worldtimeapi.org/api/timezone/Asia/Kolkata';
 
-        // Fetch the JSON data
-        fetch(url)
+        // Fetch the JSON data from the API
+        fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
                 // Display the JSON data
-                document.getElementById('json-data').textContent = JSON.stringify(data, null, 2);
+                document.getElementById('api-data').textContent = JSON.stringify(data, null, 2);
             })
             .catch(error => console.error('Error fetching data:', error));
     </script>
